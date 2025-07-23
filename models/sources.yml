@@ -10,3 +10,10 @@ sources:
         description: One record per customer.
       - name: orders
         description: One record per order. Includes cancelled and deleted orders.
+  - name: stripe
+    description: This is a sample data provided by course
+    database: raw
+    schema: stripe
+    tables:
+      - name: payment
+        description: payment data.
