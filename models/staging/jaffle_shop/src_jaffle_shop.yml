@@ -5,15 +5,20 @@ sources:
     description: This is a replica of the Postgres database used by our app
     database: raw
     schema: jaffle_shop
+    freshness: 
+      error_after:
+        count: 5
+        period: day
+      warn_after:
+        count: 4
+        period: day
+    loaded_at_field: _etl_loaded_at
+
     tables:
       - name: customers
         description: One record per customer.
+        freshness: null
+        
       - name: orders
         description: One record per order. Includes cancelled and deleted orders.
-  - name: stripe
-    description: This is a sample data provided by course
-    database: raw
-    schema: stripe
-    tables:
-      - name: payment
-        description: payment data.
+        
