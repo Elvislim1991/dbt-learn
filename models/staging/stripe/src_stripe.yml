@@ -1,0 +1,19 @@
+version: 2
+
+sources:
+  - name: stripe
+    description: This is a sample data provided by course
+    database: raw
+    schema: stripe
+    tables:
+      - name: payment
+        description: payment data.
+        loaded_at_field: _batched_at
+        freshness: 
+          error_after:
+            count: 5
+            period: day
+          warn_after:
+            count: 4
+            period: day
+        
